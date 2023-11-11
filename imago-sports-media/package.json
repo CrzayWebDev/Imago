@@ -11,6 +11,13 @@
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "eslint . --ignore-path .gitignore --fix"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "npm run lint:eslint",
+    "*.{md,json}": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
   "dependencies": {
     "next": "14.0.2",
     "react": "^18",
